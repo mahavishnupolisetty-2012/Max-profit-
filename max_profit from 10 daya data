@@ -1,12 +1,16 @@
+# if you have rs 1000 to invest and you have an array that tells you the stock prices for the next 10 business days. what is the maximum profit that can make given that
+you are allowed to do one sell transaction and one buy transaction after that.
+
+
 #include <stdio.h>
 int main()
 {
-    int i,a[10],min,max;
+    int i,a[10],min,max; # taking the input
     for(i=0;i<9;i++)
     {
         scanf("%d",&a[i]);
     }
-    min=a[0];
+    min=a[0]; # to find the minimun value in the array so that we can perform a buy transaction.
     for(i=1;i<9;i++)
     {
         if(a[i]<min)
@@ -14,7 +18,7 @@ int main()
             min=a[i];
         }
     }
-    max=a[0];
+    max=a[0]; # finding a maximum value in the array so that we can perform a sell transaction
     for(i=1;i<9;i++)
     {
         if(a[i]>max)
@@ -22,7 +26,7 @@ int main()
             max=a[i];
         }
     }
-    if((1000-min)>(max-1000))
+    if((1000-min)>(max-1000)) # finding which profit is more 
     {
         printf("The profit is %d\n",(1000-min));
     }
